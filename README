@@ -1,0 +1,43 @@
+Description
+===========
+
+I wanted to simulate the history of a galaxy full of aliens. The aliens would be able to jump from system to system populating the galaxy and encountering other races. There might be territorial conflicts, trade alliances, and possibly some human intervention? 
+
+Plan for the mechanics
+======================
+
+How will Galaxies work
+—————————————————————-
+- Each galaxy will be uniquely generated in a simulation
+- A galaxy is composed of a certain number of stars
+- Each Star has a colour, X co-ordinate, and Y co-ordinate generated from the star’s number
+- The stars in galaxies are generated using the noise functions that Processing has built in
+- A galaxy will be divided into sectors so accessing information on stars will be quicker 
+- Stars will fall into a C like hash map based off of sector 
+
+How will Stars work
+———————————————————
+- Each Star has a colour, X co-ordinate, and Y co-ordinate generated from the star’s number
+- Each Star will house a unique number of planets, all with different properties
+- Selecting a star will bring up a mini-map of the planets within this system 
+
+How will Planets work
+—————————————————————
+- Each planet will have a colour from a set list, an X pos, a Y pos, and a size
+- Information on the inhabitants and resources inhabitants gain
+
+How will Aliens work
+————————————————————
+- List of inhabitants in a galaxy class
+- Each race has a specific set of attributes which defines them
+	- Population
+	- # of systems
+	- Diplomacy factors
+	- habits?
+	- Jump capabilities? 
+- Ideas for aliens
+	- Stealth
+	- Big foot
+	- beetles
+	- Rock creatures
+	- Oversized unicellular organisms
