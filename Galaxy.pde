@@ -17,7 +17,7 @@ public class Galaxy {
     }
   }
   
-  void logSpiral(){
+  void logSpiral(float degreeOffset){
     float theta = 0; 
     float r = pow( (2.7182), (0.7 * theta) );
     float x = (r)*cos(theta);
@@ -28,21 +28,21 @@ public class Galaxy {
       if(theta > TWO_PI){
         break;  
       }
-      r = pow( (2.7182), (0.95 * theta) );
+      r = 16*pow( (2.7182), (0.5 * theta) );
       x = (r)*cos(theta) + width/2;
       y = (r)*sin(theta) + height/2; 
       //ellipse(x,y,1,1);
-      galaxy.add(new Star(starcount,x,y));
+      galaxy.add(new Star(starcount,x,y,degreeOffset));
       starcount++;
       
       x = -1*(r)*cos(theta) + width/2;
       y = -1*(r)*sin(theta) + height/2; 
       //ellipse(x,y,1,1);
-      galaxy.add(new Star(starcount,x,y));
+      galaxy.add(new Star(starcount,x,y,degreeOffset));
       starcount++; 
       
       
-      theta+= 0.01;
+      theta+= 0.01; //numstars = ceil(4pi/this incrementation)
     }
   }
    
