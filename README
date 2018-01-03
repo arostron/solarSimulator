@@ -1,7 +1,7 @@
 Description
 ===========
 
-I wanted to simulate the history of a galaxy full of aliens. The aliens would be able to jump from system to system populating the galaxy and encountering other races. There might be territorial conflicts, trade alliances, and possibly some human intervention? 
+I wanted to simulate the history of a galaxy full of aliens. The aliens would be able to jump from system to system populating the galaxy and encountering other races. There might be territorial conflicts, trade alliances, and possibly some human intervention? Currently only galaxy rendering works. 
 
 Plan for the mechanics
 ======================
@@ -13,7 +13,13 @@ How will Galaxies work
 - Each Star has a colour, X co-ordinate, and Y co-ordinate generated from the star’s number
 - The stars in galaxies are generated using the noise functions that Processing has built in
 - A galaxy will be divided into sectors so accessing information on stars will be quicker 
-- Stars will fall into a C like hash map based off of sector 
+- Stars will fall into a C like hash map based off of sector
+
+- A galaxy is currently (sort of) shaped like an elliptical galaxy 
+- Spiral Galaxies would be really neat (logarithmic spiral)
+	- Change star generation such that it depends on a certain (x,y)
+	- given origin (x,y) -> random offset (x,y)
+	- logarithmic spiral through given origin to produce spiral galaxy  
 
 How will Stars work
 ———————————————————
@@ -25,6 +31,7 @@ How will Planets work
 —————————————————————
 - Each planet will have a colour from a set list, an X pos, a Y pos, and a size
 - Information on the inhabitants and resources inhabitants gain
+- Biome specific worlds
 
 How will Aliens work
 ————————————————————
@@ -36,7 +43,7 @@ How will Aliens work
 	- habits?
 	- Jump capabilities? 
 - Ideas for aliens
-	- Stealth
+	- Stealth 
 	- Big foot
 	- beetles
 	- Rock creatures
