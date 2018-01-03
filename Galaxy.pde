@@ -1,6 +1,7 @@
 public class Galaxy {
   
   private int numStars;
+  ArrayList<Star> galaxy = new ArrayList<Star>();
 
   //constructor method
   public Galaxy(int NUMSTARS){
@@ -25,19 +26,14 @@ public class Galaxy {
   }//end draw rand galaxy 
   
   //pretty galaxy.....
+  //generates a noise galaxy of numstar stars 
   void drawNoiseGalaxy(){
     background(0); 
-    stroke(1); 
-    int pad = 100; // increasing spreads the galaxy out past screen (100)
-  
     for(int i = 0; i < numStars*2; i += 2){
-      int x = (int) map(noise(noisekey + i),0,1,0-pad,width+pad); //star x
-      int y = (int) map(noise(noisekey + i+1),0,1,0-pad,height+pad); //star y
-      fill(map(noise(x,y),0,1,0,255));
-      ellipse(x,y,2,2);
+      galaxy.add(new Star(i));
     }
-  
   }
+  
   
   int systemR = 1;
   //you made systems the planets, originally stars were the background 
