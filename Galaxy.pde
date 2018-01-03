@@ -16,6 +16,29 @@ public class Galaxy {
       galaxy.add(new Star(i));
     }
   }
+  
+  void logSpiral(){
+    float theta = 0; 
+    float r = pow( (2.7182), (0.7 * theta) );
+    float x = (r)*cos(theta);
+    float y = (r)*sin(theta);
+    
+    while(true){
+      if(theta > TWO_PI){
+        break;  
+      }
+      r = pow( (2.7182), (0.95 * theta) );
+      x = (r)*cos(theta) + width/2;
+      y = (r)*sin(theta) + height/2; 
+      ellipse(x,y,1,1); 
+      
+      x = -1*(r)*cos(theta) + width/2;
+      y = -1*(r)*sin(theta) + height/2; 
+      ellipse(x,y,1,1); 
+      
+      theta+= 0.05;
+    }
+  }
    
   void printAvgTimeGalaxy(){
     long total = 0;

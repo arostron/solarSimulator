@@ -6,13 +6,19 @@ void setup(){
   background(0); //black void 
   noiseSeed(noisekey); //set noiseSeed which holds galaxy gen constant
   
-  g1 = new Galaxy(5000);  //<>// //<>//
+  g1 = new Galaxy(5000); 
   g1.generateGalaxy(); 
+  
   //println(g1.timedrawNoiseGalaxy()+" ms");
+  fill(255);
+  noStroke(); 
   
 }//end setup
 
 
-void draw(){
+
+//draw a parametrically defined logarithmic curve 
+void draw(){ 
+  g1.logSpiral();  //<>//
   
 }//end draw
