@@ -13,7 +13,7 @@ public class Galaxy {
   void generateGalaxy(){
     background(0); 
     for(int i = 0; i < numStars*2; i += 2){
-      galaxy.add(new Star(i));
+      //galaxy.add(new Star(i));
     }
   }
   
@@ -30,11 +30,14 @@ public class Galaxy {
       r = pow( (2.7182), (0.95 * theta) );
       x = (r)*cos(theta) + width/2;
       y = (r)*sin(theta) + height/2; 
-      ellipse(x,y,1,1); 
+      //ellipse(x,y,1,1);
+      galaxy.add(new Star(0,x,y));
       
       x = -1*(r)*cos(theta) + width/2;
       y = -1*(r)*sin(theta) + height/2; 
-      ellipse(x,y,1,1); 
+      //ellipse(x,y,1,1);
+      galaxy.add(new Star(100,x,y));
+      
       
       theta+= 0.05;
     }

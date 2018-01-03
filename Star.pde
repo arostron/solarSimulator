@@ -4,11 +4,11 @@ public class Star{
   private float colour,x,y;
   
   //constructor method
-  public Star(int _starID){
+  public Star(int _starID, float _x, float _y){
     starID = _starID;
     float[] shift = generatePolarCoordShift(height/2);
-    x = width/2 + shift[0]; //star x
-    y = height/2 + shift[1]; //star y
+    x = _x + shift[0]; //star x
+    y = _y + shift[1]; //star y
     colour = map(noise(x,y),0,1,0,255); 
     drawStar();
   } 
