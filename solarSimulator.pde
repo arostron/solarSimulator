@@ -27,6 +27,6 @@ void draw(){
    g1.logSpiral(i+90);
    i-=0.5; 
    */
-   g1.spin(); 
+   g1.drawSpin(); 
   
 }//end draw

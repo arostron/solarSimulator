@@ -7,15 +7,13 @@ public class Star{
   public Star(int _starID, float _x, float _y, float degreeOffset){
     starID = _starID; //<>// //<>//
     float[] shift = generatePolarCoordShift(100);
-    x = _x - width/2;
-    y = _y - height/2;
+    x = _x + shift[0];
+    y = _y + shift[1];
     rotate(degreeOffset); 
-    x += shift[0] + width/2;
-    y += shift[1] + height/2;
     colour = map(noise(x,y),0,1,0,255); 
-    drawStar(); //<>// //<>//
+    drawStar(); //<>//
   } 
-  
+   //<>//
   float generateX(){
     return  map(noise(noisekey + starID),0,1,0,width);
   }
@@ -47,14 +45,20 @@ public class Star{
   }
   
   void rotate(float degrees){
+    
+    //shift (x,y) back to origin
+    x-=width/2;
+    y-=height/2;
     float radians = degrees*(TWO_PI/360); 
     float tmpx = x;
     float tmpy = y;
+    //rotate (x,y) about origin
     x = tmpx*cos(radians)-tmpy*sin(radians);
     y = tmpx*sin(radians)+tmpy*cos(radians);
-  
+    //shift (x,y) back from origin 
+    x+=width/2;
+    y+=height/2;
+    
   }
-
-
 
 }//end star class

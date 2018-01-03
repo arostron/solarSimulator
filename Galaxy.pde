@@ -2,7 +2,6 @@ public class Galaxy {
   //instance variables
   private int numStars;
   ArrayList<Star> galaxy = new ArrayList<Star>();
-  int test;
 
   //constructor method
   public Galaxy(int NUMSTARS){
@@ -78,10 +77,11 @@ public class Galaxy {
     }
   }
   
-  void spin(){
+  void drawSpin(){
+    background(0);
     for (Star star : galaxy) {
       star.rotate(1);
-      star.draw(); 
+      star.drawStar(); 
     }
   }
    
