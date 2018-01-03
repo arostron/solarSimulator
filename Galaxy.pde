@@ -22,6 +22,7 @@ public class Galaxy {
     float r = pow( (2.7182), (0.7 * theta) );
     float x = (r)*cos(theta);
     float y = (r)*sin(theta);
+    int starcount = 0; 
     
     while(true){
       if(theta > TWO_PI){
@@ -31,15 +32,17 @@ public class Galaxy {
       x = (r)*cos(theta) + width/2;
       y = (r)*sin(theta) + height/2; 
       //ellipse(x,y,1,1);
-      galaxy.add(new Star(0,x,y));
+      galaxy.add(new Star(starcount,x,y));
+      starcount++;
       
       x = -1*(r)*cos(theta) + width/2;
       y = -1*(r)*sin(theta) + height/2; 
       //ellipse(x,y,1,1);
-      galaxy.add(new Star(100,x,y));
+      galaxy.add(new Star(starcount,x,y));
+      starcount++; 
       
       
-      theta+= 0.05;
+      theta+= 0.01;
     }
   }
    
