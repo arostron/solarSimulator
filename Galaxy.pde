@@ -2,6 +2,7 @@ public class Galaxy {
   //instance variables
   private int numStars;
   ArrayList<Star> galaxy = new ArrayList<Star>();
+  int test;
 
   //constructor method
   public Galaxy(int NUMSTARS){
@@ -42,7 +43,45 @@ public class Galaxy {
       starcount++; 
       
       
-      theta+= 0.01; //numstars = ceil(4pi/this incrementation)
+      theta+= 2*TWO_PI/numStars; //numstars = ceil(4pi/this incrementation)
+    }
+  }
+  
+  //generates an infinity shaped galaxy
+  void infinity(float degreeOffset){
+    float theta = 0; 
+    float a = 400; 
+    float r = sqrt(a*a*cos(2*theta));
+    float x = (r)*cos(theta);
+    float y = (r)*sin(theta);
+    int starcount = 0; 
+    
+    while(true){
+      if(theta > TWO_PI){
+        break;  
+      }
+      r = sqrt(a*a*cos(2*theta));
+      x = (r)*cos(theta) + width/2;
+      y = (r)*sin(theta) + height/2; 
+      //ellipse(x,y,1,1);
+      galaxy.add(new Star(starcount,x,y,degreeOffset));
+      starcount++;
+      
+      x = -1*(r)*cos(theta) + width/2;
+      y = -1*(r)*sin(theta) + height/2; 
+      //ellipse(x,y,1,1);
+      galaxy.add(new Star(starcount,x,y,degreeOffset));
+      starcount++; 
+      
+      
+      theta+= 2*TWO_PI/numStars; //numstars = ceil(4pi/this incrementation)
+    }
+  }
+  
+  void spin(){
+    for (Star star : galaxy) {
+      star.rotate(1);
+      star.draw(); 
     }
   }
    

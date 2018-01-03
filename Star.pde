@@ -5,7 +5,7 @@ public class Star{
   
   //constructor method
   public Star(int _starID, float _x, float _y, float degreeOffset){
-    starID = _starID; //<>//
+    starID = _starID; //<>// //<>//
     float[] shift = generatePolarCoordShift(100);
     x = _x - width/2;
     y = _y - height/2;
@@ -13,7 +13,7 @@ public class Star{
     x += shift[0] + width/2;
     y += shift[1] + height/2;
     colour = map(noise(x,y),0,1,0,255); 
-    drawStar(); //<>//
+    drawStar(); //<>// //<>//
   } 
   
   float generateX(){
