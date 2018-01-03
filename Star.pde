@@ -1,24 +1,23 @@
 public class Star{
 
-  private int x,y,starID,pad;
-  private float colour;
+  private int starID;
+  private float colour,x,y;
   
   //constructor method
   public Star(int _starID){
     starID = _starID;
-    pad = 100; // increasing spreads the galaxy out past screen (100)
     x = generateX(); //star x
-    y = generateY(); //star y
+    y = generateY(); //star y //<>//
     colour = map(noise(x,y),0,1,0,255); 
     drawStar();
   } 
   
-  int generateX(){
-    return (int) map(noise(noisekey + starID),0,1,0-pad,width+pad);
+  float generateX(){
+    return  map(noise(noisekey + starID),0,1,0,width);
   }
   
-  int generateY(){
-    return (int) map(noise(noisekey + starID+1),0,1,0-pad,height+pad); 
+  float generateY(){
+    return  map(noise(noisekey + starID+1),0,1,0,height); 
   }
   
   void drawStar(){
@@ -30,4 +29,4 @@ public class Star{
 
 
 
-}
+}//end star class
