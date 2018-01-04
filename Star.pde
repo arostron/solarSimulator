@@ -5,7 +5,7 @@ public class Star{
   
   //constructor method
   public Star(int _starID, float _x, float _y, float degreeOffset){
-    starID = _starID; //<>// //<>//
+    starID = _starID; //<>//
     float[] shift = generatePolarCoordShift(100);
     x = _x + shift[0];
     y = _y + shift[1];
@@ -13,16 +13,19 @@ public class Star{
     colour = map(noise(x,y),0,1,0,255); 
     drawStar(); //<>//
   } 
-   //<>//
+  
+  //old way of generating star's x coord
   float generateX(){
     return  map(noise(noisekey + starID),0,1,0,width);
   }
   
+  //old way of generating star's y coord
   float generateY(){
     return  map(noise(noisekey + starID+1),0,1,0,height); 
   }
   
   
+  //noise function generates a r,theta shift translated into cartesian coords
   float[] generatePolarCoordShift(float maxRadius){
     float[] coords = {-1,-1};
     float r = map(noise(noisekey + starID),0,1,-1*maxRadius,maxRadius);
@@ -33,19 +36,22 @@ public class Star{
     return coords;
   }
   
+  //draws star
   void drawStar(){
     noStroke(); 
     fill(colour);
     ellipse(x,y,1.4,1.4);
+    /*
     if(starID == 1000){
       fill(255,0,0);
       ellipse(x,y,2,2);
     }
+    */
   
   }
   
+  //rotate the star's position "degrees" degrees about the centre of the window
   void rotate(float degrees){
-    
     //shift (x,y) back to origin
     x-=width/2;
     y-=height/2;
