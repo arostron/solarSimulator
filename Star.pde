@@ -2,11 +2,12 @@ public class Star{
 
   private int starID;
   private float colour,x,y;
+  float displacementRadius = 100; 
   
   //constructor method
   public Star(int _starID, float _x, float _y, float degreeOffset){
     starID = _starID; //<>//
-    float[] shift = generatePolarCoordShift(100);
+    float[] shift = generatePolarCoordShift(displacementRadius);
     x = _x + shift[0];
     y = _y + shift[1];
     rotate(degreeOffset); 
@@ -15,13 +16,13 @@ public class Star{
   } 
   
   //old way of generating star's x coord
-  float generateX(){
-    return  map(noise(noisekey + starID),0,1,0,width);
+  void generateX(){
+    x = map(noise(noisekey + starID),0,1,0,width);
   }
   
   //old way of generating star's y coord
-  float generateY(){
-    return  map(noise(noisekey + starID+1),0,1,0,height); 
+  void generateY(){
+    y = map(noise(noisekey + starID+1),0,1,0,height); 
   }
   
   
@@ -61,7 +62,7 @@ public class Star{
     //rotate (x,y) about origin
     x = tmpx*cos(radians)-tmpy*sin(radians);
     y = tmpx*sin(radians)+tmpy*cos(radians);
-    //shift (x,y) back from origin 
+    //shift (x,y) back from origin
     x+=width/2;
     y+=height/2;
     

@@ -18,7 +18,9 @@ public class Galaxy {
     switch(type){
       case "Cluster": //creates galaxy about origin not centre
         for(int i = 0; i < numStars*2; i += 2){
-          galaxy.add(new Star(i,0,0,0));
+          galaxy.add(new Star(i,width/2,height/2,0));
+          galaxy.get(i/2).generateX();
+          galaxy.get(i/2).generateY(); 
         }
       break;
       
