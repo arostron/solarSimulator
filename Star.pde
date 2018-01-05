@@ -10,8 +10,8 @@ public class Star{
     float[] shift = generatePolarCoordShift(displacementRadius);
     x = _x + shift[0];
     y = _y + shift[1];
-    rotate(degreeOffset); 
-    colour = map(noise(x,y),0,1,0,255); 
+    rotate(degreeOffset);
+    colour = map(noise(x,y),0,1,0,255);
     drawStar(); //<>//
   } 
   
@@ -54,8 +54,8 @@ public class Star{
   //rotate the star's position "degrees" degrees about the centre of the window
   void rotate(float degrees){
     //shift (x,y) back to origin
-    x-=width/2;
-    y-=height/2;
+    x-=width/2 + generatePolarCoordShift(displacementRadius)[0];
+    y-=height/2 + generatePolarCoordShift(displacementRadius)[1];
     float radians = degrees*(TWO_PI/360); 
     float tmpx = x;
     float tmpy = y;
@@ -63,8 +63,8 @@ public class Star{
     x = tmpx*cos(radians)-tmpy*sin(radians);
     y = tmpx*sin(radians)+tmpy*cos(radians);
     //shift (x,y) back from origin
-    x+=width/2;
-    y+=height/2;
+    x+=width/2 + generatePolarCoordShift(displacementRadius)[0];
+    y+=height/2 + generatePolarCoordShift(displacementRadius)[1];
     
   }
 

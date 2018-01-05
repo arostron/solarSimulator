@@ -104,7 +104,7 @@ public class Galaxy {
   //rotates and draws the entire galaxy
   void drawSpin(){
     //background(0);
-    float rotation = -0.05;
+    float rotation = -0.2;
     for (Star star : galaxy) {
       star.rotate(rotation);
       star.drawStar(); 
