@@ -1,7 +1,7 @@
 Description
 ===========
 
-I wanted to simulate the history of a galaxy full of aliens. The aliens would be able to jump from system to system populating the galaxy and encountering other races. There might be territorial conflicts, trade alliances, and possibly some human intervention? Currently only galaxy rendering works. 
+I wanted to simulate the history of a galaxy full of aliens. The aliens would be able to jump from system to system populating the galaxy and encountering other races. There might be territorial conflicts, trade alliances, and possibly some human intervention? Currently, only galaxy rendering works. 
 
 This project is also intended to be a playground for some interesting things I learn in CMPUT 274/275
 
@@ -10,10 +10,10 @@ Plan for the mechanics
 
 How will Galaxies work
 —————————————————————-
-- At the start of a simulation a random number is used as a key for galaxy gen
-- A galaxy is composed of a certain number of stars pre defined 
-- Each Star has a colour, X co-ordinate, and Y co-ordinate generated from the star’s number
-- The stars in galaxies are generated using the noise functions that Processing has built in
+- At the start of a simulation, a random number is used as a key for galaxy gen
+- A galaxy is composed of a certain number of stars predefined 
+- Each Star has a color, X coordinate, and Y co-ordinate generated from the star’s number
+- The stars in galaxies are generated using the noise functions that Processing has built-in
 - A galaxy will be divided into sectors so accessing information on stars will be quicker 
 - Multiple stars will be associated with a dictionary of sector numbers for easy access
 - Default galaxy is currently a spiral galaxy
@@ -22,13 +22,13 @@ How will Galaxies work
 
 How will Stars work
 ———————————————————
-- Each Star has a colour, X co-ordinate, and Y co-ordinate generated from the star’s number
+- Each Star has a color, X coordinate, and Y coordinates generated from the star’s number
 - Each Star will house a unique number of planets, all with different properties
 - Selecting a star will bring up a mini-map of the planets within this system 
 
 How will Planets work
 —————————————————————
-- Each planet will have a colour from a set list, an X pos, a Y pos, and a size
+- Each planet will have a color from a set list, an X pos, a Y pos, and a size
 - Information on the inhabitants and resources inhabitants gain
 - Biome specific worlds?
 
