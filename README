@@ -3,23 +3,22 @@ Description
 
 I wanted to simulate the history of a galaxy full of aliens. The aliens would be able to jump from system to system populating the galaxy and encountering other races. There might be territorial conflicts, trade alliances, and possibly some human intervention? Currently only galaxy rendering works. 
 
+This project is also intended to be a playground for some interesting things I learn in CMPUT 274/275
+
 Plan for the mechanics
 ======================
 
 How will Galaxies work
 —————————————————————-
-- Each galaxy will be uniquely generated in a simulation
-- A galaxy is composed of a certain number of stars
+- At the start of a simulation a random number is used as a key for galaxy gen
+- A galaxy is composed of a certain number of stars pre defined 
 - Each Star has a colour, X co-ordinate, and Y co-ordinate generated from the star’s number
 - The stars in galaxies are generated using the noise functions that Processing has built in
 - A galaxy will be divided into sectors so accessing information on stars will be quicker 
-- Stars will fall into a C like hash map based off of sector
+- Multiple stars will be associated with a dictionary of sector numbers for easy access
+- Default galaxy is currently a spiral galaxy
+- Galaxies could be constructed like a graph with nodes and pathways  
 
-- A galaxy is currently (sort of) shaped like an elliptical galaxy 
-- Spiral Galaxies would be really neat (logarithmic spiral)
-	- Change star generation such that it depends on a certain (x,y)
-	- given origin (x,y) -> random offset (x,y)
-	- logarithmic spiral through given origin to produce spiral galaxy  
 
 How will Stars work
 ———————————————————
@@ -31,7 +30,7 @@ How will Planets work
 —————————————————————
 - Each planet will have a colour from a set list, an X pos, a Y pos, and a size
 - Information on the inhabitants and resources inhabitants gain
-- Biome specific worlds
+- Biome specific worlds?
 
 How will Aliens work
 ————————————————————
